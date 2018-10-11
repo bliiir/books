@@ -1,0 +1,35 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <p>Welcome to my book collection</p>
+  <h2>Overview</h2>
+  <p>Here are some stats:</p>
+  <table>
+    <tr>
+        <td class="p-1"><strong>Books:</strong></td>
+        <td class="p-1">{{ num_books }}</td>
+    </tr>
+    <tr>
+        <td class="p-1"><strong>Copies:</strong></td>
+        <td class="p-1">{{ num_instances }}</td>
+    </tr>
+    <tr>
+        <td class="p-1"><strong>Copies available:</strong></td>
+        <td class="p-1">{{ num_instances_available }}</td>
+    </tr>
+    <tr>
+        <td class="p-1"><strong>Authors:</strong></td>
+        <td class="p-1">{{ num_authors }}</td>
+    </tr>
+    <tr>
+        <td class="p-1"><strong>Genres:</strong></td>
+        <td class="p-1">{{ num_genres }}</td>
+    </tr>
+    <tr>
+        <td class="p-1"><strong>Books with the word 'Analysis' :</strong></td>
+        <td class="p-1">{{ num_books_containing_analysis }}</td>
+    </tr>
+  </table>
+{% endblock %}
+
+

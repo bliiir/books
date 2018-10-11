@@ -1,0 +1,33 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1 class="row">Author details</h1>
+
+        <table class="py-3">
+            <tr>
+                <td><strong>First name:</strong></td>
+                <td>{{ author.first_name }}</td>
+            </tr>
+            <tr>
+                <td><strong>Last name:</strong></td>
+                <td>{{ author.last_name }}</td>
+            </tr>
+            <tr>
+                <td><strong>Date of birth:</strong></td>
+                <td>{{ author.date_of_birth }}</td>
+            </tr>
+            <tr>
+                <td><strong>Date of death:</strong></td>
+                <td>{{ author.date_of_death }}</td>
+            </tr>
+        </table>
+
+    <h3 class="row py-3">Books by the author</h3>
+    {% for book in author.book_set.all %}
+        <div class="row">
+            <a href="{{book.get_absolute_url}}">{{book.title}}</a></br>
+            {{book.summary}}
+        </div>
+    {% endfor %}
+
+{% endblock %}
